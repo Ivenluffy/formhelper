@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="formhelper.js"></script>
+
+</head>
+<body>
+<form style="width:60%;margin:20px auto;" id="form">
+    <fieldset>
+        <input type="range" name="range" id="range" value="80">
+        <input type="file" name="file" id="file">
+        <textarea name="textarea" id="textarea">textarea</textarea>
+        <input type="date" value="2020-10-10" name="date">
+        <input type="time" value="19:30" name="time">
+        <input type="datetime-local" value="2020-10-10T19:30" name="datetime">
+        <input type="number" value="123" name="number">
+        <input type="tel" value="13745171457" name="tel">
+        <input type="email" value="emial@qq.com" name="email">
+        <input type="url" value="http://www.baidu.com" name="url">
+        <input type="hidden" value="hidden" name="hidden">
+        <select id="select" name="select">
+            <option value="PHP">PHP</option>
+            <option value="JS" selected>JS</option>
+            <option value="JAVA">JAVA</option>
+        </select>
+        <input type="color" id="color" value="#fff222" name="color">
+        <input type="image" name="image" id="image" src="https://img.lanrentuku.com/img/allimg/1506/5-15062F91006.gif"
+               value="https://img.lanrentuku.com/img/allimg/1506/5-15062F91006.gif">
+        <div>
+            gender:
+            <label><input type="radio" name="gender" value="男"></label>男
+            <label><input type="radio" name="gender" value="女" checked>女</label>
+        </div>
+        <div>
+            hobby:
+            <label><input type="checkbox" name="hobby" value="basketball" checked>篮球</label>
+            <label><input type="checkbox" name="hobby" value="football" checked>足球</label>
+            <label><input type="checkbox" name="hobby" value="swimming">游泳</label>
+        </div>
+    <button>button</button>
+    </fieldset>
+</form>
+<div style="text-align: center">
+    <input id="clear" type="button" value="clearForm"/>
+    <input id="save" type="button" value="getData"/>
+    <input id="formdata" type="button" value="getFormData"/>
+    <input id="load" type="button" value="setData"/>
+    <input id="reset" type="reset" value="resetForm"/>
+</div>
+</body>
+</html>
+<script>
+    var fdata = {
+        "range": "65",
+        "file": "",
+        "textarea": "say hello!",
+        "date": "2020-10-30",
+        "time": "20:35",
+        "datetime": "2020-10-30T21:36",
+        "number": "456",
+        "tel": "15921709394",
+        "email": "taobao@qq.com",
+        "url": "http://www.taobao.com",
+        "hidden": "hidden",
+        "image": "https://img.lanrentuku.com/img/allimg/1506/5-15062F91006.gif",
+        "select": "PHP",
+        "color": "#ff0019",
+        "gender": "男",
+        "hobby": "basketball,swimming"
+    };
+    var form = FormHelper("#form");
+    var clear = document.getElementById("clear");
+    var save = document.getElementById("save");
+    var formdata = document.getElementById("formdata");
+    var load = document.getElementById("load");
+    var reset = document.getElementById("reset");
+    clear.onclick = function () {
+        form.clearForm();
+    }
+    save.onclick = function () {
+        var data = form.getData();
+        console.log(data)
+        alert(JSON.stringify(data))
+    }
+    formdata.onclick = function () {
+        var fd = form.getFormData();
+        console.log(fd);
+        for (var key of fd.keys()) {
+            console.log("key:" + key + " value:" + fd.get(key));
+        }
+    }
+    load.onclick = function () {
+        form.setData(fdata);
+    }
+    reset.onclick = function () {
+        form.resetForm();
+    }
+
+</script>
+<script>
+
+</script>
