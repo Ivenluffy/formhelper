@@ -1,7 +1,7 @@
 /*!
-  * formhelper v1.0
-  * (c) 2020 Iven Wong
-  * Released under the MIT License.
+  * FormHelper Plugin v1.0
+  * Copyright (c) 2020 Iven Wong
+  * Released under the MIT license
   */
 (function(global,factory){
     typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
