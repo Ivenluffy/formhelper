@@ -9,9 +9,9 @@
             (global = global || self, global.FormHelper = factory());
 })(this,function(){"use strict";
 
-    //#region 表单工具
+    //#region 表单辅助工具
     /**
-     * 表单工具
+     * 表单辅助工具
      * @param {string|HTMLElement} elSelector -容器元素的CSS选择器字符串或html对象
      */
     function FormHelper(elSelector) {
